@@ -11,18 +11,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Allow all CORS - wide open
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', '*');
-    res.header('Access-Control-Allow-Headers', '*');
-    next();
-});
-
-// Handle OPTIONS
-app.options('*', (req, res) => {
-    res.sendStatus(200);
-});
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
