@@ -3,7 +3,7 @@ import userModel from "../models/user.model.js";
 
 const connectDb = async () => {
     try {
-        const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/savera';
+        const mongoURI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/savera';
         await mongoose.connect(mongoURI, {
             useNewUrlParser: true,
             useUnifiedTopology: true

@@ -27,9 +27,9 @@ const startServer = async () => {
         await connectDb();
         console.log('Connected to MongoDB');
 
-        // Initialize email schedules
-        await initializeSchedules();
-        console.log('Email schedules initialized successfully');
+        // // Initialize email schedules
+        // await initializeSchedules();
+        // console.log('Email schedules initialized successfully');
 
         // Start server
         app.listen(PORT, () => {

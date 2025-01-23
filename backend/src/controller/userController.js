@@ -52,11 +52,13 @@ const updateUser = async (req, res) => {
     }
 
     // Update only allowed fields
-    const { name, email, sendTime, period } = req.body;
+    const { name, email, sendTime, period, categories, AiPrompt} = req.body;
     if (name) user.name = name;
     if (email) user.email = email;
     if (sendTime) user.sendTime = sendTime;
     if (period) user.period = period;
+    if (categories) user.categories = categories;
+    if (AiPrompt) user.AiPrompt = AiPrompt;
 
     const updatedUser = await user.save();
     res.status(200).json({

@@ -49,15 +49,10 @@ const userSchema = new mongoose.Schema({
         default: 'daily'
     },
     categories: {
-        type: [String],
-        default: ['motivation', 'productivity'],
-        validate: {
-            validator: function(v) {
-                const validCategories = ['motivation', 'productivity', 'success', 'leadership', 'mindfulness', 'creativity', 'health', 'wisdom'];
-                return v.every(cat => validCategories.includes(cat));
-            },
-            message: props => `${props.value} contains invalid categories!`
-        }
+        type: String,
+    },
+    AiPrompt : {
+        type : String,
     }
 }, {
     timestamps: true
